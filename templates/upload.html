@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="center">
+<form method="POST" enctype="multipart/form-data">
+<h2 for="formFileMultiple" class="form-label">Upload the bookmark file</h2>
+<input class="form-control" type="file" id="fil" name="fil" multiple />
+<button type="submit" class="btn btn-primary btn-lg">Submit</button>
+</form>
+</div>
+{% endblock body %}
+

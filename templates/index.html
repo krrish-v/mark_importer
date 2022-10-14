@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+{% set username = username %}
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+  <div class="row">
+    <!-- BEGIN SEARCH RESULT -->
+    <div class="col-md-12">
+      <div class="grid search">
+        <div class="grid-body">
+          <div class="row">
+            <!-- BEGIN FILTERS -->
+            <div class="col-md-3">
+              <h2 class="grid-title"><i class="fa fa-filter"></i> Search by Tags</h2>
+              <hr>
+
+              <!-- BEGIN FILTER BY CATEGORY -->
+              <h4>Import here:</h4>
+              <form method="POST">
+              <div class="form-outline form-white mb-4">
+                <input id="bookmark" name="bookmark" class="form-control form-control-lg" />
+                <label class="form-label">Paste the link you want to add bookmark</label>
+              </div>
+              <button class="btn btn-outline-light btn-lg px-5" type="submit" style="background-color: rgb(44, 10, 117); color: white">Import</button>
+              </form>
+
+              <!-- END FILTER BY CATEGORY -->
+
+            </div>
+            <!-- END FILTERS -->
+            <!-- BEGIN RESULT -->
+            <div class="col-md-9">
+              <h2><i class="fa fa-file-o"></i>ID: {{username}}</h2>
+              <hr>
+              <!-- BEGIN SEARCH INPUT -->
+              <!-- END SEARCH INPUT -->
+              <p>Showing all results {{search}}</p>
+
+              <div class="padding"></div>
+
+              <div class="row">
+
+
+                <!-- BEGIN TABLE RESULT -->
+                <div class="table-responsive">
+                  <table class="table table-hover">
+                    <tbody>
+                      {% if links != '' %}
+                      
+                      {% for sno in tags %}
+                      {% set target = "/bookmark/target/link_num=" + sno + ",username=" + username %}
+                          <tr>
+                            <td class="image"><img src="https://via.placeholder.com/400x300/FF8C00" alt=""></td>
+                            <td class="product">
+                              <strong>
+                                <a href="{{target}}">
+                                  Open Links
+                                </a>
+                              </strong>
+                            </td>
+                            <td class="rate text-right"><span><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                                  class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></span>
+                            </td>
+                            <td class="price text-right">{{tags[sno]}}</td>
+                          </tr>
+                        {% endfor %}
+                      {% else %}
+                      <p>No bookmark found, upload it to see here</p>
+                      {% endif %}
+
+
+                    </tbody>
+                  </table>
+                </div>
+                <!-- END TABLE RESULT -->
+
+              </div>
+              <!-- END RESULT -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END SEARCH RESULT -->
+    </div>
+  </div>
+
+  {% endblock body %}
