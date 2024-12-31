@@ -1,8 +1,8 @@
 # Mark Importer
 
-This is idea was proposed in AI Hackathon 2022 https://github.com/krrish-v/bookmark-collector. Here that application is reviewed again
+The idea was proposed in AI Hackathon 2022 https://github.com/krrish-v/bookmark-collector. Here that application is reviewed again
 
-It is a Bookmark Manager that put the tags in the front of the websites marked by using unsupervised learning made for a personal use only, it is trained on the dataset of 1927 articles which have overall 600 categories of tags, It will be further update on more data in future
+It is a Bookmark Manager that puts the tags in the front of the websites marked by using unsupervised learning made for personal use only, it is trained on the dataset of 1927 articles which have an overall 600 categories of tags, It will be further updated on more data in future
 
 Installing all the requirements...
 
